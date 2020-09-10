@@ -72,7 +72,8 @@ namespace apptesting.Controllers
             }
             sqlBulk = new SqlBulkCopy(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             sqlBulk.DestinationTableName = "Locations";
-            sqlBulk.ColumnMappings.Add("lat","lat");
+            //dbcolumn //excelsheet
+            sqlBulk.ColumnMappings.Add("latitude","lat");
             sqlBulk.ColumnMappings.Add("long","long");            
             sqlBulk.WriteToServer(dt);
 
